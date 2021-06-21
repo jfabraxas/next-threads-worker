@@ -8,7 +8,7 @@ export default function Home() {
   const worker = React.useRef()
   React.useEffect(() => {
     if(!worker.current){
-      const load = async(){
+      const load = async() => {
         worker.current = await spawn(
           new Worker(new URL("../worker/hello"),import.meta.url)
           )
