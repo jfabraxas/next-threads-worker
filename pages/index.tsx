@@ -10,7 +10,7 @@ export default function Home() {
     if(!worker.current){
       const load = async() => {
         worker.current = await spawn(
-          new Worker(new URL("../worker/hello"),import.meta.url)
+          new Worker(new URL("../worker/hello",import.meta.url))
           )
       }
       load()
